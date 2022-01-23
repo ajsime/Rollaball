@@ -1729,6 +1729,7 @@ MonoBehaviour:
   speed: 10
   countText: {fileID: 95659645}
   winTextObject: {fileID: 1540981453}
+  coinSound: {fileID: 8300000, guid: 6876d14979db3f64381f5a15c029c8f2, type: 3}
 --- !u!114 &1508257051
 MonoBehaviour:
   m_ObjectHideFlags: 0
