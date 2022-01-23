@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     public GameObject winTextObject;
     public AudioClip coinSound;
     public AudioClip winSound;
+    public AudioClip bonusSound;
+    public AudioClip exitSound;
 
     private Rigidbody rb;
     private int count;
@@ -62,7 +64,13 @@ public class PlayerController : MonoBehaviour
 
             SetCountText();
         }
-   
+        if(other.gameObject.CompareTag("Bonus"))
+        {
+            AudioSource.PlayClipAtPoint(bonusSound, transform.position);
+        }
+        if(other.gameObject.CompareTag("Exit"))
+        {
+            AudioSource.PlayClipAtPoint(exitSound, transform.position);
+        }
     }
-   
 }
