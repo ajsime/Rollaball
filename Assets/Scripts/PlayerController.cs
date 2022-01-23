@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI countText;
     public GameObject winTextObject;
     public AudioClip coinSound;
+    public AudioClip winSound;
 
     private Rigidbody rb;
     private int count;
@@ -40,6 +41,7 @@ public class PlayerController : MonoBehaviour
         if(count >= 12)
         {
             winTextObject.SetActive(true);
+            AudioSource.PlayClipAtPoint(winSound, transform.position);
         }
     }
 
