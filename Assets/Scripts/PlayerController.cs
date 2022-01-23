@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip winSound;
     public AudioClip bonusSound;
     public AudioClip exitSound;
+    public AudioClip swordSound;
 
     private Rigidbody rb;
     private int count;
@@ -71,6 +72,11 @@ public class PlayerController : MonoBehaviour
         if(other.gameObject.CompareTag("Exit"))
         {
             AudioSource.PlayClipAtPoint(exitSound, transform.position);
+        }
+        if(other.gameObject.CompareTag("Sword"))
+        {
+            AudioSource.PlayClipAtPoint(swordSound, transform.position);
+            other.gameObject.SetActive(false);
         }
     }
 }
