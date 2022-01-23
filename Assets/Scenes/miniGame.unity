@@ -2033,7 +2033,7 @@ GameObject:
   - component: {fileID: 1183395652}
   - component: {fileID: 1183395651}
   m_Layer: 0
-  m_Name: ground (1)
+  m_Name: Bonus Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
