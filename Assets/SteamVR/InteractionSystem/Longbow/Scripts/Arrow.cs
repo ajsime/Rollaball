@@ -273,5 +273,17 @@ namespace Valve.VR.InteractionSystem
 				Destroy( scaleParentObject );
 			}
 		}
+		void OnTriggerEnter(Collider other)
+		{
+			if (other.gameObject.CompareTag("PickUp"))
+			{
+				//AudioSource.PlayClipAtPoint(coinSound, transform.position);
+				other.gameObject.SetActive(false);
+				//count = count + 1;
+
+				//SetCountText();
+			}
+
+		}
 	}
 }
