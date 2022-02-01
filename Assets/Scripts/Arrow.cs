@@ -279,25 +279,13 @@ namespace Valve.VR.InteractionSystem
 		{
 			if (other.gameObject.CompareTag("PickUp"))
 			{
-				AudioSource.PlayClipAtPoint(coinSound, transform.position);
+				//AudioSource.PlayClipAtPoint(coinSound, transform.position);
 				other.gameObject.SetActive(false);
-				count = count + 1;
+				//count = count + 1;
 
-				SetCountText();
+				//SetCountText();
 			}
-			if (other.gameObject.CompareTag("Bonus"))
-			{
-				AudioSource.PlayClipAtPoint(bonusSound, transform.position);
-			}
-			if (other.gameObject.CompareTag("Exit"))
-			{
-				AudioSource.PlayClipAtPoint(exitSound, transform.position);
-			}
-			if (other.gameObject.CompareTag("Sword"))
-			{
-				AudioSource.PlayClipAtPoint(swordSound, transform.position);
-				other.gameObject.SetActive(false);
-			}
+			
 		}
 	}
 }
