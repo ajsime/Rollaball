@@ -8,6 +8,8 @@ TagManager:
   - Bonus
   - Exit
   - Sword
+  - projectile
+  - RNG
   layers:
   - Default
   - TransparentFX

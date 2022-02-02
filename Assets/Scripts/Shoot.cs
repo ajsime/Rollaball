@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.UI;
 using UnityEngine;
 using Random = System.Random;
 
@@ -31,6 +32,9 @@ public class Shoot : MonoBehaviour
         numPickups = GameObject.FindGameObjectsWithTag("PickUp").Length;
         maxPickups = numPickups;
         lastNumPickups = numPickups;
+        GameObject parent = GameObject.FindWithTag("RNG");
+        RNG rng = parent.GetComponent<RNG>();
+        random = rng.rng;
     }
 
     // Update is called once per frame
@@ -39,6 +43,17 @@ public class Shoot : MonoBehaviour
         timer += Time.deltaTime;
         playerPosition = player.transform.position;
         updateNumObjects();
+        if ((!gameObject.activeSelf) && (bullet != null)) //the lines following this if statement do not work as intended. Unsure of correct method to do it
+        {
+            try
+            {
+                Destroy(bullet);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
 
         if (Input.GetKeyDown(KeyCode.Mouse0) && !active)
         {
@@ -47,7 +62,7 @@ public class Shoot : MonoBehaviour
 
         if (timer >= 7f && !active)
         {
-            shoot();
+            //shoot();
             timer = 0f;
         }
         if (active)
@@ -66,22 +81,16 @@ public class Shoot : MonoBehaviour
 
     }
 
-    void shoot()
+    public void shoot()
     {
-        randNum = random.Next(0, 10);
         
-        if (randNum > difficulty)
-        {
-            timer = 0f;
-            return;
-        }
         bullet = Instantiate(projectile, transform.position, Quaternion.identity) as GameObject;
-        //bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 10);
+        bullet.gameObject.tag = "projectile";
         lastKnownPosition = playerPosition;
         bullet.transform.LookAt(lastKnownPosition);
-        //bullet.transform.rotation = Quaternion.LookRotation(playerPosition);
         active = true;
         timer = 0f;
+        Update();
     }
 
     void adjustDifficulty()
