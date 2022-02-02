@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9054986087447078155}
   - component: {fileID: 9054986087447078154}
   - component: {fileID: 8187353724982428038}
-  - component: {fileID: -3840001367055836457}
+  - component: {fileID: -1558417857637285626}
   m_Layer: 0
   m_Name: pickup
   m_TagString: PickUp
@@ -126,7 +126,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-3840001367055836457
+--- !u!114 &-1558417857637285626
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,4 +139,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 9085674140614965129, guid: b0a6a25833d9e2143b45cb719d65ff0f, type: 3}
-  speed: 0
+  player: {fileID: 0}
+  speed: 5
+  height: 0
